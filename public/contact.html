@@ -3,192 +3,71 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Contact the NoMo FOMO team with a question, idea, or collaboration proposal."
-    />
+    <meta name="description" content="Contact the NoMo FOMO team with a question, idea or collaboration proposal." />
     <title>Contact · NoMo FOMO</title>
-
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
-            colors: {
-              ink: "#110C14",
-              signal: "#623C78",
-              glow: "#D398F5",
-            },
-            boxShadow: {
-              glow: "0 20px 60px rgba(109, 94, 247, 0.22)",
-            },
+            colors: { paper: "#FFFDF9", cloud: "#F3ECE9", ink: "#2E2231", purple: "#623C78", orchid: "#D398F5", coral: "#E96E57", mint: "#91C9A8", butter: "#F4CD66" },
+            boxShadow: { card: "0 14px 30px rgba(70, 47, 67, 0.10)", sticker: "0 7px 0 rgba(98, 60, 120, 0.16)" },
           },
         },
       };
     </script>
     <style>
-      @keyframes rise-in {
-        from { opacity: 0; transform: translateY(14px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-
-      .rise-in { animation: rise-in 650ms cubic-bezier(0.16, 1, 0.3, 1) both; }
-      .rise-in-delay { animation-delay: 120ms; }
-
-      @media (prefers-reduced-motion: reduce) {
-        *, *::before, *::after {
-          animation-duration: 0.01ms !important;
-          animation-iteration-count: 1 !important;
-          scroll-behavior: auto !important;
-          transition-duration: 0.01ms !important;
-        }
-      }
+      body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .display { font-family: "Arial Rounded MT Bold", "Trebuchet MS", ui-sans-serif, system-ui, sans-serif; }
+      .paper-dot { background-image: radial-gradient(rgba(98, 60, 120, 0.15) 1px, transparent 1px); background-size: 16px 16px; }
+      @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; } }
     </style>
   </head>
-
-  <body class="min-h-screen bg-ink font-sans text-slate-100 antialiased">
-    <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
-      <div class="absolute -left-32 top-0 h-80 w-80 rounded-full bg-signal/25 blur-3xl"></div>
-      <div class="absolute right-0 top-1/3 h-96 w-96 rounded-full bg-glow/10 blur-3xl"></div>
-      <div class="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-glow/10 blur-3xl"></div>
-    </div>
-
-    <header class="mx-auto max-w-6xl px-6 py-6 lg:px-8">
-      <nav class="flex items-center justify-between" aria-label="Main navigation">
-        <a href="index.html" class="flex items-center gap-3 font-semibold tracking-tight" aria-label="NoMo FOMO home">
-          <span class="grid h-9 w-9 place-items-center rounded-xl bg-glow text-lg text-ink" aria-hidden="true">✦</span>
-          <span>NoMo FOMO</span>
-        </a>
-        <div class="flex items-center gap-2 sm:gap-3">
-          <a href="index.html" class="rounded-full px-3 py-2 text-sm font-medium text-slate-300 transition hover:text-glow sm:px-4">Home</a>
-          <a
-            href="#contact-form"
-            class="rounded-full border border-glow/40 bg-glow/10 px-4 py-2 text-sm font-semibold text-glow transition hover:border-glow hover:bg-glow hover:text-ink"
-          >
-            Contact us
-          </a>
-        </div>
-      </nav>
+  <body class="min-h-screen bg-paper text-ink antialiased">
+    <div class="pointer-events-none fixed inset-0 -z-10 opacity-40 paper-dot" aria-hidden="true"></div>
+    <header class="mx-auto flex max-w-6xl items-center justify-between px-5 py-5 sm:px-8">
+      <a href="index.html" class="flex items-center gap-3" aria-label="NoMo FOMO home"><span class="grid h-10 w-10 place-items-center rounded-2xl bg-purple text-xl text-orchid shadow-sticker" aria-hidden="true">✦</span><span><strong class="display block text-lg leading-none tracking-tight">NoMo FOMO</strong><span class="mt-1 block text-[10px] font-bold uppercase tracking-[0.16em] text-purple">Dublin student demo</span></span></a>
+      <a href="index.html" class="rounded-full border-2 border-purple bg-white px-4 py-2 text-sm font-semibold text-purple transition hover:bg-purple hover:text-white">View project</a>
     </header>
 
-    <main>
-      <section class="mx-auto max-w-6xl px-6 pb-16 pt-12 lg:px-8 lg:pb-24 lg:pt-20">
-        <div class="max-w-3xl rise-in">
-          <p class="mb-5 inline-flex items-center gap-2 rounded-full border border-glow/30 bg-glow/10 px-4 py-2 text-sm font-medium text-glow">
-            <span class="h-2 w-2 rounded-full bg-glow"></span>
-            The conversation starts here
-          </p>
-          <h1 class="text-5xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl">
-            Make the first<br class="hidden sm:block" /> move.
-          </h1>
-          <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
-            A thought, a question, a spark of an idea—send it our way. The smallest note can become the next great moment.
-          </p>
-        </div>
+    <main class="mx-auto max-w-6xl px-5 pb-16 pt-7 sm:px-8 sm:pt-12">
+      <div class="max-w-2xl">
+        <p class="inline-flex items-center gap-2 rounded-full border border-purple/20 bg-white px-3 py-1.5 text-sm font-semibold text-purple"><span class="h-2 w-2 rounded-full bg-coral"></span>Start with a small note</p>
+        <h1 class="display mt-6 text-5xl font-black leading-[0.96] tracking-tight sm:text-6xl">Got an idea? <span class="text-purple">We’re all ears.</span></h1>
+        <p class="mt-5 text-lg leading-8 text-ink/70">Feedback, a useful local tip, a possible collaboration—send it over. Good student ideas tend to travel.</p>
+      </div>
 
-        <div class="mt-14 grid gap-6 lg:grid-cols-[0.78fr_1.22fr] lg:gap-8">
-          <aside class="rise-in rise-in-delay rounded-3xl border border-white/10 bg-white/[0.05] p-7 shadow-glow sm:p-9">
-            <p class="text-sm font-bold uppercase tracking-[0.18em] text-glow">Why reach out</p>
-            <h2 class="mt-4 text-3xl font-bold tracking-tight text-white">Good ideas deserve a little momentum.</h2>
-            <p class="mt-5 leading-7 text-slate-300">
-              Ask a question, share feedback, or tell us where NoMo FOMO could make a difference. Every message starts a useful conversation.
-            </p>
+      <div class="mt-10 grid gap-6 lg:grid-cols-[0.75fr_1.25fr]">
+        <aside class="rounded-[2rem] border-2 border-purple/10 bg-purple p-6 text-white shadow-card sm:p-8">
+          <p class="text-sm font-bold uppercase tracking-[0.16em] text-orchid">No pressure, just a chat</p>
+          <h2 class="display mt-3 text-3xl font-black leading-tight">The useful stuff starts with people telling us what they need.</h2>
+          <div class="mt-8 space-y-4 border-t border-white/15 pt-6 text-sm leading-6 text-white/85">
+            <p><span class="mr-2 text-orchid">✦</span>Share a brilliant free or low-cost Dublin idea.</p>
+            <p><span class="mr-2 text-orchid">✦</span>Tell us what would make planning with friends less awkward.</p>
+            <p><span class="mr-2 text-orchid">✦</span>Bring a partnership or a project thought.</p>
+          </div>
+          <div class="mt-8 rounded-3xl bg-white/10 p-4 text-sm leading-6 text-white/85"><strong class="text-orchid">Preview note:</strong> this contact form checks your message locally but does not send personal data anywhere.</div>
+        </aside>
 
-            <div class="mt-10 space-y-5 border-t border-white/10 pt-7">
-              <div class="flex gap-4">
-                <span class="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-signal/25 text-lg text-glow" aria-hidden="true">↗</span>
-                <div>
-                  <h3 class="font-semibold text-white">Share a bright idea</h3>
-                  <p class="mt-1 text-sm leading-6 text-slate-400">Tell us what would help people feel more present, more often.</p>
-                </div>
-              </div>
-              <div class="flex gap-4">
-                <span class="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-signal/25 text-lg text-glow" aria-hidden="true">✦</span>
-                <div>
-                  <h3 class="font-semibold text-white">Build together</h3>
-                  <p class="mt-1 text-sm leading-6 text-slate-400">Bring a partnership, collaboration, or intriguing problem to the table.</p>
-                </div>
-              </div>
+        <section class="rounded-[2rem] border-2 border-purple/10 bg-white p-6 shadow-card sm:p-8" aria-labelledby="form-title">
+          <p class="text-sm font-bold uppercase tracking-[0.16em] text-purple">Drop us a note</p>
+          <h2 id="form-title" class="display mt-2 text-3xl font-black tracking-tight">What’s on your mind?</h2>
+          <div id="success-message" class="mt-6 hidden rounded-3xl border-2 border-mint bg-[#f1f8f3] p-5" role="status" aria-live="polite" tabindex="-1"><div class="flex gap-3"><span class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-mint font-black text-ink">✓</span><div><p class="font-bold text-[#356346]">That’s a good note.</p><p class="mt-1 text-sm leading-6 text-ink/70">Everything is filled in and ready. This preview keeps your message on this device until a real inbox is connected.</p></div></div></div>
+
+          <form id="contact-form" class="mt-7" novalidate>
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div><label for="name" class="mb-2 block text-sm font-bold">Name <span class="text-coral" aria-hidden="true">*</span></label><input id="name" name="name" type="text" autocomplete="name" required class="field" placeholder="Your name" aria-describedby="name-error" /><p id="name-error" class="error" role="alert"></p></div>
+              <div><label for="email" class="mb-2 block text-sm font-bold">Email <span class="text-coral" aria-hidden="true">*</span></label><input id="email" name="email" type="email" autocomplete="email" required class="field" placeholder="you@example.com" aria-describedby="email-error" /><p id="email-error" class="error" role="alert"></p></div>
             </div>
-
-            <p class="mt-10 rounded-2xl border border-glow/20 bg-glow/10 p-4 text-sm leading-6 text-glow">
-              <span class="font-semibold">Small note, real signal.</span> We read every thoughtful message.
-            </p>
-          </aside>
-
-          <section class="rise-in rise-in-delay overflow-hidden rounded-3xl border border-white/10 bg-slate-900/80 p-1 shadow-glow" aria-labelledby="form-title">
-            <div class="rounded-[1.35rem] border border-white/5 bg-ink/55 p-6 sm:p-9">
-              <div class="flex items-start justify-between gap-4">
-                <div>
-                  <p class="text-sm font-bold uppercase tracking-[0.18em] text-glow">Send a note</p>
-                  <h2 id="form-title" class="mt-3 text-3xl font-bold tracking-tight text-white">What’s on your mind?</h2>
-                </div>
-                <span class="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-glow text-xl text-ink" aria-hidden="true">✦</span>
-              </div>
-
-              <div id="success-message" class="mt-7 hidden rounded-2xl border border-glow/30 bg-glow/10 p-5" role="status" aria-live="polite" tabindex="-1">
-                <div class="flex gap-3">
-                  <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-glow text-sm font-bold text-ink" aria-hidden="true">✓</span>
-                  <div>
-                    <p class="font-semibold text-glow">Message ready.</p>
-                    <p class="mt-1 text-sm leading-6 text-slate-200">Your note passed every check. This preview keeps messages on your device, so connect an inbox before publishing to deliver them to the team.</p>
-                  </div>
-                </div>
-              </div>
-
-              <form id="contact-form" class="mt-8" novalidate>
-                <div class="grid gap-5 sm:grid-cols-2">
-                  <div>
-                    <label for="name" class="mb-2 block text-sm font-semibold text-slate-200">Name <span class="text-glow" aria-hidden="true">*</span></label>
-                    <input id="name" name="name" type="text" autocomplete="name" required class="block w-full rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3.5 text-white outline-none placeholder:text-slate-500 transition focus:border-glow focus:ring-4 focus:ring-glow/10" placeholder="Your name" aria-describedby="name-error" />
-                    <p id="name-error" class="mt-2 hidden text-sm text-rose-300" role="alert"></p>
-                  </div>
-                  <div>
-                    <label for="email" class="mb-2 block text-sm font-semibold text-slate-200">Email <span class="text-glow" aria-hidden="true">*</span></label>
-                    <input id="email" name="email" type="email" autocomplete="email" required class="block w-full rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3.5 text-white outline-none placeholder:text-slate-500 transition focus:border-glow focus:ring-4 focus:ring-glow/10" placeholder="you@example.com" aria-describedby="email-error" />
-                    <p id="email-error" class="mt-2 hidden text-sm text-rose-300" role="alert"></p>
-                  </div>
-                </div>
-
-                <div class="mt-5">
-                  <label for="subject" class="mb-2 block text-sm font-semibold text-slate-200">Subject <span class="text-glow" aria-hidden="true">*</span></label>
-                  <input id="subject" name="subject" type="text" required class="block w-full rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3.5 text-white outline-none placeholder:text-slate-500 transition focus:border-glow focus:ring-4 focus:ring-glow/10" placeholder="What can we help with?" aria-describedby="subject-error" />
-                  <p id="subject-error" class="mt-2 hidden text-sm text-rose-300" role="alert"></p>
-                </div>
-
-                <div class="mt-5">
-                  <div class="mb-2 flex items-baseline justify-between gap-3">
-                    <label for="message" class="block text-sm font-semibold text-slate-200">Message <span class="text-glow" aria-hidden="true">*</span></label>
-                    <span id="message-count" class="text-xs text-slate-500">0 / 1500</span>
-                  </div>
-                  <textarea id="message" name="message" rows="6" maxlength="1500" required class="block w-full resize-y rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3.5 text-white outline-none placeholder:text-slate-500 transition focus:border-glow focus:ring-4 focus:ring-glow/10" placeholder="Tell us a little more…" aria-describedby="message-error message-count"></textarea>
-                  <p id="message-error" class="mt-2 hidden text-sm text-rose-300" role="alert"></p>
-                </div>
-
-                <div class="mt-7 flex flex-col gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
-                  <p class="max-w-xs text-xs leading-5 text-slate-500">Fields marked with <span class="text-glow">*</span> are required. No data is sent from this preview.</p>
-                  <button id="submit-button" type="submit" class="inline-flex items-center justify-center gap-2 rounded-full bg-glow px-6 py-3 font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-white focus:outline-none focus:ring-4 focus:ring-glow/20 disabled:cursor-wait disabled:opacity-70">
-                    <span id="button-text">Check my message</span>
-                    <span id="button-icon" aria-hidden="true">→</span>
-                  </button>
-                </div>
-              </form>
-            </div>
-          </section>
-        </div>
-      </section>
+            <div class="mt-5"><label for="subject" class="mb-2 block text-sm font-bold">Subject <span class="text-coral" aria-hidden="true">*</span></label><input id="subject" name="subject" type="text" required class="field" placeholder="What would you like to talk about?" aria-describedby="subject-error" /><p id="subject-error" class="error" role="alert"></p></div>
+            <div class="mt-5"><div class="mb-2 flex items-baseline justify-between"><label for="message" class="block text-sm font-bold">Message <span class="text-coral" aria-hidden="true">*</span></label><span id="message-count" class="text-xs font-semibold text-ink/45">0 / 1500</span></div><textarea id="message" name="message" rows="6" maxlength="1500" required class="field resize-y" placeholder="Tell us a little more…" aria-describedby="message-error message-count"></textarea><p id="message-error" class="error" role="alert"></p></div>
+            <div class="mt-7 flex flex-col gap-4 border-t border-purple/10 pt-6 sm:flex-row sm:items-center sm:justify-between"><p class="max-w-xs text-xs leading-5 text-ink/50">Fields with <span class="font-bold text-coral">*</span> are needed. No data is sent from this preview.</p><button id="submit-button" type="submit" class="inline-flex items-center justify-center gap-2 rounded-full bg-coral px-6 py-3 font-bold text-white shadow-sticker transition hover:-translate-y-0.5 hover:bg-[#d75a45] disabled:cursor-wait disabled:opacity-70"><span id="button-text">Check my note</span><span id="button-icon" aria-hidden="true">→</span></button></div>
+          </form>
+        </section>
+      </div>
     </main>
 
-    <footer class="mx-auto max-w-6xl px-6 py-10 lg:px-8">
-      <div class="flex flex-col justify-between gap-5 border-t border-white/10 pt-8 sm:flex-row sm:items-center">
-        <p class="text-sm text-slate-400">Built with curiosity at [Hackathon Name].</p>
-        <div class="flex gap-5 text-sm font-medium text-slate-300">
-          <a href="#" class="transition hover:text-glow">GitHub</a>
-          <a href="#" class="transition hover:text-glow">Team</a>
-          <a href="contact.html" class="text-glow" aria-current="page">Contact</a>
-        </div>
-      </div>
-    </footer>
+    <footer class="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-9 text-sm sm:flex-row sm:items-center sm:justify-between sm:px-8"><p class="font-semibold text-ink/65">NoMo FOMO · More memories. Less money.</p><div class="flex gap-5 font-semibold text-purple"><a href="index.html#idea" class="hover:text-coral">Project overview</a><a href="contact.html" aria-current="page" class="hover:text-coral">Contact</a></div></footer>
 
     <script>
       const form = document.querySelector("#contact-form");
@@ -198,83 +77,18 @@
       const successMessage = document.querySelector("#success-message");
       const messageField = document.querySelector("#message");
       const messageCount = document.querySelector("#message-count");
+      const fields = { name: { element: document.querySelector("#name"), message: "Please tell us your name." }, email: { element: document.querySelector("#email"), message: "Enter a valid email address." }, subject: { element: document.querySelector("#subject"), message: "Give your note a subject." }, message: { element: messageField, message: "Write a short message before continuing." } };
 
-      const fields = {
-        name: { element: document.querySelector("#name"), message: "Please tell us your name." },
-        email: { element: document.querySelector("#email"), message: "Enter a valid email address." },
-        subject: { element: document.querySelector("#subject"), message: "Give your message a subject." },
-        message: { element: messageField, message: "Write a short message before sending." },
-      };
+      document.querySelectorAll(".field").forEach((field) => field.classList.add("block", "w-full", "rounded-2xl", "border-2", "border-purple/10", "bg-paper", "px-4", "py-3", "text-ink", "outline-none", "placeholder:text-ink/35", "transition", "focus:border-purple", "focus:ring-4", "focus:ring-purple/10"));
+      document.querySelectorAll(".error").forEach((error) => error.classList.add("mt-2", "hidden", "text-sm", "font-semibold", "text-coral"));
 
-      function showError(fieldName, message) {
-        const { element } = fields[fieldName];
-        const error = document.querySelector(`#${fieldName}-error`);
-        element.setAttribute("aria-invalid", "true");
-        element.classList.add("border-rose-400", "ring-4", "ring-rose-400/10");
-        error.textContent = message;
-        error.classList.remove("hidden");
-      }
+      function showError(name, message) { const { element } = fields[name]; const error = document.querySelector(`#${name}-error`); element.setAttribute("aria-invalid", "true"); element.classList.add("border-coral", "ring-4", "ring-coral/10"); error.textContent = message; error.classList.remove("hidden"); }
+      function clearError(name) { const { element } = fields[name]; const error = document.querySelector(`#${name}-error`); element.removeAttribute("aria-invalid"); element.classList.remove("border-coral", "ring-4", "ring-coral/10"); error.textContent = ""; error.classList.add("hidden"); }
+      function validate(name) { const { element, message } = fields[name]; const value = element.value.trim(); const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value); const valid = value && (name !== "email" || validEmail); if (!valid) { showError(name, message); return false; } clearError(name); return true; }
 
-      function clearError(fieldName) {
-        const { element } = fields[fieldName];
-        const error = document.querySelector(`#${fieldName}-error`);
-        element.removeAttribute("aria-invalid");
-        element.classList.remove("border-rose-400", "ring-4", "ring-rose-400/10");
-        error.textContent = "";
-        error.classList.add("hidden");
-      }
-
-      function validateField(fieldName) {
-        const { element, message } = fields[fieldName];
-        const value = element.value.trim();
-        const isEmail = fieldName === "email";
-        const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-        const isValid = value.length > 0 && (!isEmail || validEmail);
-
-        if (!isValid) {
-          showError(fieldName, message);
-          return false;
-        }
-
-        clearError(fieldName);
-        return true;
-      }
-
-      Object.entries(fields).forEach(([fieldName, { element }]) => {
-        element.addEventListener("blur", () => validateField(fieldName));
-        element.addEventListener("input", () => {
-          if (element.getAttribute("aria-invalid") === "true") validateField(fieldName);
-        });
-      });
-
-      messageField.addEventListener("input", () => {
-        messageCount.textContent = `${messageField.value.length} / 1500`;
-      });
-
-      form.addEventListener("submit", (event) => {
-        event.preventDefault();
-        successMessage.classList.add("hidden");
-
-        const invalidFields = Object.keys(fields).filter((fieldName) => !validateField(fieldName));
-        if (invalidFields.length > 0) {
-          fields[invalidFields[0]].element.focus();
-          return;
-        }
-
-        submitButton.disabled = true;
-        buttonText.textContent = "Checking…";
-        buttonIcon.innerHTML = '<span class="inline-block animate-spin">✦</span>';
-
-        window.setTimeout(() => {
-          form.reset();
-          messageCount.textContent = "0 / 1500";
-          buttonText.textContent = "Check my message";
-          buttonIcon.textContent = "→";
-          submitButton.disabled = false;
-          successMessage.classList.remove("hidden");
-          successMessage.focus();
-        }, 650);
-      });
+      Object.entries(fields).forEach(([name, { element }]) => { element.addEventListener("blur", () => validate(name)); element.addEventListener("input", () => { if (element.getAttribute("aria-invalid") === "true") validate(name); }); });
+      messageField.addEventListener("input", () => { messageCount.textContent = `${messageField.value.length} / 1500`; });
+      form.addEventListener("submit", (event) => { event.preventDefault(); successMessage.classList.add("hidden"); const invalid = Object.keys(fields).filter((name) => !validate(name)); if (invalid.length) { fields[invalid[0]].element.focus(); return; } submitButton.disabled = true; buttonText.textContent = "Checking…"; buttonIcon.textContent = "✦"; window.setTimeout(() => { form.reset(); messageCount.textContent = "0 / 1500"; buttonText.textContent = "Check my note"; buttonIcon.textContent = "→"; submitButton.disabled = false; successMessage.classList.remove("hidden"); successMessage.focus(); }, 500); });
     </script>
   </body>
 </html>

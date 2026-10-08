@@ -16,7 +16,8 @@ const mimeTypes = {
 const server = http.createServer((request, response) => {
   const origin = `http://${request.headers.host || "localhost"}`;
   const url = new URL(request.url, origin);
-  const safePath = url.pathname === "/" ? "/index.html" : url.pathname === "/contact" ? "/contact.html" : url.pathname;
+  const cleanRoutes = { "/": "/index.html", "/find": "/find.html", "/contact": "/contact.html", "/activities": "/activities.html" };
+  const safePath = cleanRoutes[url.pathname] || url.pathname;
   const requestedPath = path.resolve(publicDir, `.${safePath}`);
 
   if (!requestedPath.startsWith(publicDir)) {

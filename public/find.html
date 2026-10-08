@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Use NoMo FOMO's preference-based demo to find affordable Dublin activity ideas." />
+    <title>Plan Finder · NoMo FOMO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { paper: "#FFFDF9", cloud: "#F3ECE9", ink: "#2E2231", purple: "#623C78", orchid: "#D398F5", coral: "#E96E57", mint: "#91C9A8", butter: "#F4CD66" },
+            boxShadow: { card: "0 14px 30px rgba(70,47,67,.10)", sticker: "0 6px 0 rgba(98,60,120,.16)" }
+          }
+        }
+      };
+    </script>
+    <style>
+      html { scroll-behavior: smooth; }
+      body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .display { font-family: "Arial Rounded MT Bold", "Trebuchet MS", ui-sans-serif, system-ui, sans-serif; }
+      .paper-dot { background-image: radial-gradient(rgba(98,60,120,.14) 1px, transparent 1px); background-size: 16px 16px; }
+      .choice-button { border: 2px solid rgba(98,60,120,.14); background: #fff; color: #623C78; font-weight: 700; transition: background .16s ease, color .16s ease, border-color .16s ease, transform .16s ease; }
+      .choice-button:hover { border-color: rgba(98,60,120,.45); transform: translateY(-1px); }
+      .choice-button.is-selected { background: #623C78; border-color: #623C78; color: #fff; box-shadow: 0 4px 0 rgba(98,60,120,.16); }
+      summary::-webkit-details-marker { display: none; }
+      summary { list-style: none; }
+      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .choice-button { transition: none; } }
+    </style>
+  </head>
+  <body class="bg-paper text-ink antialiased">
+    <div class="paper-dot pointer-events-none fixed inset-0 -z-10 opacity-40" aria-hidden="true"></div>
+    <header class="mx-auto flex max-w-6xl items-center justify-between px-5 py-5 sm:px-8">
+      <a href="index.html" class="flex items-center gap-3" aria-label="NoMo FOMO home"><span class="grid h-10 w-10 place-items-center rounded-2xl bg-purple text-xl text-orchid shadow-sticker" aria-hidden="true">✦</span><span><strong class="display block text-lg leading-none tracking-tight">NoMo FOMO</strong><span class="mt-1 block text-[10px] font-bold uppercase tracking-[.16em] text-purple">Dublin student hackathon</span></span></a>
+      <nav class="flex items-center gap-1" aria-label="Main navigation"><a href="index.html#features" class="hidden rounded-full px-3 py-2 text-sm font-bold text-purple hover:bg-cloud sm:inline-flex">Project</a><a href="find.html" aria-current="page" class="hidden rounded-full bg-purple px-3 py-2 text-sm font-bold text-white md:inline-flex">Find a plan</a><a href="activities.html" class="hidden rounded-full px-3 py-2 text-sm font-bold text-purple hover:bg-cloud lg:inline-flex">Activities</a><a href="contact.html" class="rounded-full border-2 border-purple bg-white px-4 py-2 text-sm font-bold text-purple transition hover:bg-purple hover:text-white">Contact</a></nav>
+    </header>
+
+    <main>
+      <section class="mx-auto max-w-6xl px-5 pb-12 pt-10 sm:px-8 sm:pt-16">
+        <div class="grid gap-8 lg:grid-cols-[1.04fr_.96fr] lg:items-end">
+          <div><p class="inline-flex items-center gap-2 rounded-full border border-purple/20 bg-white px-3 py-1.5 text-sm font-bold text-purple"><span class="h-2 w-2 rounded-full bg-coral"></span>Working personalization demo</p><h1 class="display mt-6 text-5xl font-black leading-[.96] tracking-tight sm:text-6xl">Find your kind<br />of <span class="text-purple">plan.</span></h1><p class="mt-6 max-w-xl text-lg leading-8 text-ink/70">Tell us what sounds good. The Plan Finder ranks the researched activity library around your interests, budget, time, energy, and travel preference.</p></div>
+          <aside class="rounded-[2rem] bg-purple p-6 text-white shadow-card sm:p-7"><p class="text-sm font-bold uppercase tracking-[.16em] text-orchid">A transparent demo</p><p class="display mt-3 text-2xl font-black leading-tight">Personal taste in. Three useful ideas out.</p><p class="mt-4 text-sm leading-6 text-white/85">This is a simple rules-based matcher using the supplied activity research. No account, no tracking, no saved personal data, and no claim of live AI.</p></aside>
+        </div>
+      </section>
+
+      <section class="border-y border-purple/10 bg-cloud/70 py-12 sm:py-16">
+        <div class="mx-auto grid max-w-6xl gap-7 px-5 sm:px-8 lg:grid-cols-[.95fr_1.05fr]">
+          <form id="plan-form" class="rounded-[2rem] border-2 border-purple/10 bg-white p-6 shadow-card sm:p-8" novalidate>
+            <div class="flex items-start justify-between gap-4"><div><p class="text-sm font-bold uppercase tracking-[.16em] text-purple">Your preferences</p><h2 class="display mt-2 text-3xl font-black">Build a better evening.</h2></div><span class="grid h-10 w-10 place-items-center rounded-2xl bg-[#f6eff8] text-xl text-purple" aria-hidden="true">✦</span></div>
+
+            <fieldset class="mt-7"><legend class="font-bold">What are you in the mood for? <span class="text-coral">Pick one or more</span></legend><div class="mt-3 flex flex-wrap gap-2"><button type="button" class="choice-button rounded-full px-3 py-2 text-sm" data-group="interest" data-value="Music and nightlife" aria-pressed="false">Music & nightlife</button><button type="button" class="choice-button rounded-full px-3 py-2 text-sm" data-group="interest" data-value="Get moving" aria-pressed="false">Get moving</button><button type="button" class="choice-button rounded-full px-3 py-2 text-sm" data-group="interest" data-value="Meet new people" aria-pressed="false">Meet new people</button><button type="button" class="choice-button rounded-full px-3 py-2 text-sm" data-group="interest" data-value="Try something new" aria-pressed="false">Try something new</button><button type="button" class="choice-button rounded-full px-3 py-2 text-sm" data-group="interest" data-value="Food and coffee" aria-pressed="false">Food & coffee</button><button type="button" class="choice-button rounded-full px-3 py-2 text-sm" data-group="interest" data-value="Free and outdoors" aria-pressed="false">Free & outdoors</button></div></fieldset>
+
+            <fieldset class="mt-7"><legend class="font-bold">What feels comfortable to spend?</legend><div class="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4"><button type="button" class="choice-button rounded-2xl px-3 py-3 text-sm" data-group="budget" data-value="free" aria-pressed="false">€0 only</button><button type="button" class="choice-button is-selected rounded-2xl px-3 py-3 text-sm" data-group="budget" data-value="ten" aria-pressed="true">Up to €10</button><button type="button" class="choice-button rounded-2xl px-3 py-3 text-sm" data-group="budget" data-value="twenty" aria-pressed="false">Up to €20</button><button type="button" class="choice-button rounded-2xl px-3 py-3 text-sm" data-group="budget" data-value="flexible" aria-pressed="false">Flexible</button></div></fieldset>
+
+            <div class="mt-7 grid gap-6 sm:grid-cols-2"><fieldset><legend class="font-bold">Your social energy</legend><div class="mt-3 grid gap-2"><button type="button" class="choice-button rounded-2xl px-3 py-2.5 text-left text-sm" data-group="energy" data-value="chill" aria-pressed="false">Chill & low-key</button><button type="button" class="choice-button is-selected rounded-2xl px-3 py-2.5 text-left text-sm" data-group="energy" data-value="social" aria-pressed="true">Social & chatty</button><button type="button" class="choice-button rounded-2xl px-3 py-2.5 text-left text-sm" data-group="energy" data-value="active" aria-pressed="false">Active & outdoors</button></div></fieldset><fieldset><legend class="font-bold">How much time?</legend><div class="mt-3 grid gap-2"><button type="button" class="choice-button rounded-2xl px-3 py-2.5 text-left text-sm" data-group="time" data-value="quick" aria-pressed="false">Under an hour</button><button type="button" class="choice-button is-selected rounded-2xl px-3 py-2.5 text-left text-sm" data-group="time" data-value="two" aria-pressed="true">Around two hours</button><button type="button" class="choice-button rounded-2xl px-3 py-2.5 text-left text-sm" data-group="time" data-value="evening" aria-pressed="false">A full evening</button></div></fieldset></div>
+
+            <fieldset class="mt-7"><legend class="font-bold">Best way to get there?</legend><div class="mt-3 flex flex-wrap gap-2"><button type="button" class="choice-button rounded-full px-3 py-2 text-sm" data-group="transport" data-value="walk" aria-pressed="false">Walk</button><button type="button" class="choice-button rounded-full px-3 py-2 text-sm" data-group="transport" data-value="cycle" aria-pressed="false">Cycle</button><button type="button" class="choice-button is-selected rounded-full px-3 py-2 text-sm" data-group="transport" data-value="public" aria-pressed="true">Public transport</button></div></fieldset>
+
+            <label class="mt-7 block font-bold" for="notes">Any extra words that describe your ideal plan? <span class="font-normal text-ink/55">Optional</span></label><textarea id="notes" rows="3" maxlength="120" placeholder="e.g. coffee, art, relaxed, music, community…" class="mt-3 w-full resize-y rounded-2xl border-2 border-purple/10 bg-paper px-4 py-3 text-sm outline-none placeholder:text-ink/40 focus:border-purple"></textarea>
+            <p id="form-message" class="mt-3 text-sm font-semibold text-coral" aria-live="polite"></p><button type="submit" class="mt-4 w-full rounded-full bg-coral px-5 py-3.5 font-bold text-white shadow-sticker transition hover:-translate-y-0.5 hover:bg-[#d75a45]">Find my three plans →</button>
+          </form>
+
+          <section id="results" class="rounded-[2rem] border-2 border-purple/10 bg-paper p-6 shadow-card sm:p-8" aria-live="polite"><p class="text-sm font-bold uppercase tracking-[.16em] text-purple">Your matches</p><h2 class="display mt-2 text-3xl font-black">Ready when you are.</h2><p id="result-intro" class="mt-3 max-w-xl leading-7 text-ink/70">Pick at least one interest, then let the demo compare your choices to the 13 researched activity starting points.</p><div id="match-cards" class="mt-6 grid gap-4"></div><a href="activities.html" class="mt-6 inline-flex text-sm font-bold text-purple underline decoration-2 underline-offset-4 hover:text-coral">Browse the full Activity Library →</a></section>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20"><div class="grid gap-5 md:grid-cols-3"><article class="rounded-3xl bg-[#f6eff8] p-5"><p class="font-bold text-purple">1. You choose</p><p class="mt-2 text-sm leading-6 text-ink/70">Interests, a realistic budget, social energy, time, and travel preferences set the shape of the search.</p></article><article class="rounded-3xl bg-[#fff7ec] p-5"><p class="font-bold text-purple">2. We score</p><p class="mt-2 text-sm leading-6 text-ink/70">The demo adds points for category fit, supplied cost, duration, transport suitability, wording, and your optional notes.</p></article><article class="rounded-3xl bg-[#f1f8f3] p-5"><p class="font-bold text-purple">3. You decide</p><p class="mt-2 text-sm leading-6 text-ink/70">Each result carries the original research caveat. Check the official source before you travel or book.</p></article></div></section>
+    </main>
+
+    <footer class="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-9 text-sm sm:flex-row sm:items-center sm:justify-between sm:px-8"><p class="font-semibold text-ink/65">NoMo FOMO · More memories. Less money.</p><div class="flex gap-5 font-bold text-purple"><a href="index.html#idea" class="hover:text-coral">The idea</a><a href="activities.html" class="hover:text-coral">Activities</a><a href="contact.html" class="hover:text-coral">Contact</a></div></footer>
+
+    <script>
+      (() => {
+        const form = document.querySelector("#plan-form");
+        const message = document.querySelector("#form-message");
+        const cards = document.querySelector("#match-cards");
+        const intro = document.querySelector("#result-intro");
+        const preferences = { interests: new Set(), budget: "ten", energy: "social", time: "two", transport: "public" };
+        let activities = [];
+        const escapeHtml = (value) => String(value ?? "").replace(/[&<>'"]/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[character]);
+        const safeUrl = (value) => { try { const url = new URL(value); return ["http:", "https:"].includes(url.protocol) ? url.href : "#"; } catch { return "#"; } };
+        const allText = (activity) => [activity.category, activity.short_description, activity.why_it_fits, activity.social_format, activity.transport_suitability, activity.approximate_duration, ...(activity.best_suited_interests || [])].join(" ").toLowerCase();
+
+        function choose(button) {
+          const { group, value } = button.dataset;
+          if (group === "interest") {
+            const selected = !button.classList.contains("is-selected");
+            button.classList.toggle("is-selected", selected); button.setAttribute("aria-pressed", String(selected));
+            selected ? preferences.interests.add(value) : preferences.interests.delete(value);
+            return;
+          }
+          document.querySelectorAll(`[data-group="${group}"]`).forEach((item) => { item.classList.remove("is-selected"); item.setAttribute("aria-pressed", "false"); });
+          button.classList.add("is-selected"); button.setAttribute("aria-pressed", "true"); preferences[group] = value;
+        }
+
+        document.querySelectorAll(".choice-button").forEach((button) => button.addEventListener("click", () => choose(button)));
+
+        function scoreActivity(activity, notes) {
+          const text = allText(activity);
+          const reasons = [];
+          let score = 0;
+          preferences.interests.forEach((interest) => { if (activity.category === interest) { score += 12; reasons.push(`matches your ${interest.toLowerCase()} pick`); } });
+          const isFree = activity.estimated_cost_per_person === "€0";
+          const underTwenty = /under €20/i.test(activity.estimated_cost_per_person);
+          if (preferences.budget === "free" && isFree) { score += 8; reasons.push("fits your €0 budget"); }
+          if (preferences.budget === "ten" && (isFree || underTwenty)) { score += isFree ? 7 : 4; reasons.push(isFree ? "keeps the spend at €0" : "sits in the student-friendly cost range"); }
+          if (preferences.budget === "twenty" && (isFree || underTwenty)) { score += 5; reasons.push("fits within your €20 budget"); }
+          if (preferences.budget === "flexible") score += 2;
+          if (preferences.energy === "chill" && /(low|moderate|quiet|relaxed|café|gallery|book)/.test(text)) { score += 5; reasons.push("suits a low-key mood"); }
+          if (preferences.energy === "social" && /(social|group|friends|meet people|club|community|shared)/.test(text)) { score += 5; reasons.push("has a social format"); }
+          if (preferences.energy === "active" && /(get moving|outdoors|run|walk|hiking|fitness|cycling)/.test(text)) { score += 6; reasons.push("gets you moving or outside"); }
+          if (preferences.time === "quick" && /(30–60|1 hour|short)/.test(text)) { score += 4; reasons.push("works for a short window"); }
+          if (preferences.time === "two" && /(2 hours|1–3 hours|1.5 hours|2–4 hours|flexible)/.test(text)) { score += 4; reasons.push("can work around a two-hour plan"); }
+          if (preferences.time === "evening" && /(evening|night|gig|club|2–4 hours|event-dependent)/.test(text)) { score += 4; reasons.push("can fill an evening"); }
+          const transportTerms = { walk: /walk|walking/, cycle: /cycl|bike/, public: /public transport|bus|dart|luas/ };
+          if (transportTerms[preferences.transport].test(text)) { score += 3; reasons.push(`works with ${preferences.transport === "public" ? "public transport" : preferences.transport} travel`); }
+          notes.toLowerCase().split(/[^a-zà-ÿ]+/).filter((word) => word.length > 3).forEach((word) => { if (text.includes(word)) { score += 2; reasons.push(`picks up “${word}” from your note`); } });
+          return { activity, score, reasons: [...new Set(reasons)].slice(0, 3) };
+        }
+
+        function renderMatches(matches) {
+          cards.innerHTML = matches.map(({ activity, reasons }, index) => `
+            <article class="rounded-3xl border-2 border-purple/10 bg-white p-5 shadow-sm"><div class="flex items-start justify-between gap-3"><span class="rounded-full bg-[#f6eff8] px-3 py-1 text-xs font-black text-purple">Match ${index + 1}</span><span class="rounded-full bg-[#fff7ec] px-3 py-1 text-xs font-bold text-purple">${escapeHtml(activity.category)}</span></div><h3 class="display mt-4 text-2xl font-black leading-tight">${escapeHtml(activity.name)}</h3><p class="mt-3 text-sm leading-6 text-ink/70">${escapeHtml(activity.short_description)}</p><ul class="mt-4 space-y-1.5 text-sm leading-5 text-ink/70">${reasons.map((reason) => `<li>✓ ${escapeHtml(reason)}</li>`).join("") || "<li>✓ Fits the preferences you selected.</li>"}</ul><div class="mt-4 grid grid-cols-2 gap-2 text-xs"><div class="rounded-2xl bg-[#fff7ec] p-3"><strong class="block text-purple">Estimate</strong>${escapeHtml(activity.estimated_cost_per_person)}</div><div class="rounded-2xl bg-[#f1f8f3] p-3"><strong class="block text-purple">Duration</strong>${escapeHtml(activity.approximate_duration)}</div></div><details class="mt-4 border-t border-purple/10 pt-3"><summary class="cursor-pointer font-bold text-purple">Planning note +</summary><div class="mt-3 text-sm leading-6 text-ink/70"><p>${escapeHtml(activity.caveat)}</p><a href="${safeUrl(activity.official_source)}" target="_blank" rel="noreferrer" class="mt-3 inline-flex rounded-full bg-purple px-4 py-2 text-sm font-bold text-white hover:bg-[#502f65]">Official source ↗</a></div></details></article>`).join("");
+        }
+
+        form.addEventListener("submit", (event) => {
+          event.preventDefault(); message.textContent = "";
+          if (!preferences.interests.size) { message.textContent = "Choose at least one interest so we can make the matches useful."; return; }
+          if (!activities.length) { message.textContent = "The activity library is still loading. Try again in a moment."; return; }
+          const matches = activities.map((activity) => scoreActivity(activity, document.querySelector("#notes").value.trim())).sort((a, b) => b.score - a.score || a.activity.name.localeCompare(b.activity.name)).slice(0, 3);
+          intro.textContent = `Three research-backed options shaped around ${[...preferences.interests].join(", ")}.`; renderMatches(matches); document.querySelector("#results").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+
+        fetch("data/nomo-fomo-activities.json").then((response) => { if (!response.ok) throw new Error("Dataset unavailable"); return response.json(); }).then((dataset) => { activities = Array.isArray(dataset.activities) ? dataset.activities : []; }).catch(() => { message.textContent = "The activity library could not be loaded in this preview."; });
+      })();
+    </script>
+  </body>
+</html>
