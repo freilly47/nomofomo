@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="NoMo FOMO is a Dublin student hackathon project for affordable social plans." />
+    <title>NoMo FOMO · Project Overview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              paper: "#FFFDF9", cloud: "#F3ECE9", ink: "#2E2231", purple: "#623C78",
+              orchid: "#D398F5", coral: "#E96E57", mint: "#91C9A8", butter: "#F4CD66"
+            },
+            boxShadow: { card: "0 14px 30px rgba(70,47,67,.10)", sticker: "0 6px 0 rgba(98,60,120,.16)" }
+          }
+        }
+      };
+    </script>
+    <style>
+      html { scroll-behavior: smooth; }
+      body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .display { font-family: "Arial Rounded MT Bold", "Trebuchet MS", ui-sans-serif, system-ui, sans-serif; }
+      .paper-dot { background-image: radial-gradient(rgba(98,60,120,.14) 1px, transparent 1px); background-size: 16px 16px; }
+      .lift { transition: transform .18s ease, box-shadow .18s ease; }
+      .lift:hover { transform: translateY(-3px); box-shadow: 0 18px 34px rgba(70,47,67,.13); }
+      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
+    </style>
+  </head>
+  <body class="bg-paper text-ink antialiased">
+    <div class="paper-dot pointer-events-none fixed inset-0 -z-10 opacity-40" aria-hidden="true"></div>
+
+    <header class="mx-auto flex max-w-6xl items-center justify-between px-5 py-5 sm:px-8">
+      <a href="index.html" class="flex items-center gap-3" aria-label="NoMo FOMO home">
+        <span class="grid h-10 w-10 place-items-center rounded-2xl bg-purple text-xl text-orchid shadow-sticker" aria-hidden="true">✦</span>
+        <span><strong class="display block text-lg leading-none tracking-tight">NoMo FOMO</strong><span class="mt-1 block text-[10px] font-bold uppercase tracking-[.16em] text-purple">Dublin student hackathon</span></span>
+      </a>
+      <nav class="flex items-center gap-1" aria-label="Main navigation">
+        <a href="#features" class="hidden rounded-full px-3 py-2 text-sm font-bold text-purple hover:bg-cloud sm:inline-flex">Features</a>
+        <a href="#impact" class="hidden rounded-full px-3 py-2 text-sm font-bold text-purple hover:bg-cloud md:inline-flex">Impact</a>
+        <a href="contact.html" class="rounded-full border-2 border-purple bg-white px-4 py-2 text-sm font-bold text-purple transition hover:bg-purple hover:text-white">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="mx-auto grid max-w-6xl gap-10 px-5 pb-16 pt-8 sm:px-8 lg:grid-cols-[1.04fr_.96fr] lg:items-center lg:pb-24 lg:pt-16">
+        <div class="max-w-2xl">
+          <p class="inline-flex items-center gap-2 rounded-full border border-purple/20 bg-white px-3 py-1.5 text-sm font-bold text-purple"><span class="h-2 w-2 rounded-full bg-coral"></span>Project overview · Dublin student hackathon</p>
+          <h1 class="display mt-6 text-5xl font-black leading-[.96] tracking-tight sm:text-6xl lg:text-7xl">More memories.<br /><span class="text-purple">Less money.</span></h1>
+          <p class="mt-6 max-w-xl text-lg leading-8 text-ink/75 sm:text-xl">NoMo FOMO helps Dublin students turn a free evening and a small budget into a social plan they will actually enjoy.</p>
+          <div class="mt-8 flex flex-wrap gap-3"><a href="#idea" class="rounded-full bg-purple px-5 py-3 font-bold text-white shadow-sticker transition hover:-translate-y-0.5 hover:bg-[#502f65]">See the idea <span aria-hidden="true">↓</span></a><a href="#features" class="rounded-full border-2 border-purple/15 bg-white px-5 py-3 font-bold text-purple hover:border-purple/40">Explore features</a></div>
+          <div class="mt-9 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-ink/65"><span>✓ Affordable</span><span>✓ Social</span><span>✓ Dublin-focused</span><span>✓ Sustainable</span></div>
+        </div>
+
+        <aside class="relative mx-auto w-full max-w-md">
+          <div class="absolute -left-5 top-12 h-24 w-24 rounded-full bg-butter/60 blur-2xl" aria-hidden="true"></div><div class="absolute -right-4 bottom-10 h-28 w-28 rounded-full bg-orchid/35 blur-2xl" aria-hidden="true"></div>
+          <div class="relative overflow-hidden rounded-[2rem] bg-purple p-6 text-white shadow-card sm:p-8">
+            <div class="flex items-center justify-between"><span class="rounded-full bg-white/15 px-3 py-1 text-xs font-black uppercase tracking-[.14em] text-orchid">The big idea</span><span class="rounded-md border border-orchid/70 px-2 py-1 text-xs font-black text-orchid">MVP</span></div>
+            <p class="display mt-8 text-3xl font-black leading-tight">“What can we actually do tonight without spending loads?”</p>
+            <p class="mt-5 text-base leading-7 text-white/85">NoMo FOMO makes the answer easy: collect a few real constraints, surface three realistic Dublin options, then make one simple plan to share.</p>
+            <div class="mt-7 grid grid-cols-3 gap-3 text-center text-xs font-bold"><div class="rounded-2xl bg-white/10 p-3"><span class="block text-lg text-orchid">1</span><span class="mt-1 block">Choose</span></div><div class="rounded-2xl bg-white/10 p-3"><span class="block text-lg text-orchid">3</span><span class="mt-1 block">Match</span></div><div class="rounded-2xl bg-white/10 p-3"><span class="block text-lg text-orchid">✦</span><span class="mt-1 block">Go</span></div></div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="idea" class="border-y border-purple/10 bg-cloud/70 py-16 sm:py-24">
+        <div class="mx-auto max-w-6xl px-5 sm:px-8">
+          <div class="max-w-2xl"><p class="text-sm font-bold uppercase tracking-[.16em] text-purple">The idea</p><h2 class="display mt-3 text-4xl font-black tracking-tight sm:text-5xl">FOMO gets expensive fast.</h2><p class="mt-4 text-lg leading-8 text-ink/70">Students want to see friends and make memories, but limited budgets can make every group-chat suggestion feel like pressure to spend.</p></div>
+          <div class="mt-9 grid gap-5 lg:grid-cols-2">
+            <article class="rounded-[2rem] border-2 border-purple/10 bg-white p-7 shadow-card"><p class="text-sm font-bold uppercase tracking-[.16em] text-coral">The problem</p><h3 class="display mt-3 text-3xl font-black leading-tight">A social life should not require a big budget.</h3><p class="mt-4 leading-7 text-ink/70">There are plenty of things to do around Dublin, but searching takes time, prices can add up, and agreeing on a plan with friends is awkward. The result is often missing out—or overspending.</p></article>
+            <article class="rounded-[2rem] border-2 border-purple/20 bg-purple p-7 text-white shadow-card"><p class="text-sm font-bold uppercase tracking-[.16em] text-orchid">Our solution</p><h3 class="display mt-3 text-3xl font-black leading-tight">A small plan, built around real constraints.</h3><p class="mt-4 leading-7 text-white/85">NoMo FOMO pairs budget, interests, time and transport with affordable social activities, then makes a clear invitation people can drop straight into the group chat.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
+        <div class="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between"><div class="max-w-2xl"><p class="text-sm font-bold uppercase tracking-[.16em] text-purple">What we are building</p><h2 class="display mt-3 text-4xl font-black tracking-tight sm:text-5xl">Five features. One useful loop.</h2><p class="mt-4 text-lg leading-7 text-ink/70">Each feature exists to get a student from “I have no idea” to “I’ll send that now.”</p></div><span class="w-fit rounded-full bg-[#f1f8f3] px-3 py-2 text-sm font-bold text-[#356346]">Small enough for a working hackathon demo</span></div>
+        <div class="mt-9 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <article class="lift rounded-[1.75rem] border-2 border-purple/10 bg-white p-6 shadow-card"><span class="grid h-11 w-11 place-items-center rounded-2xl bg-orchid/45 text-lg font-black text-purple">01</span><h3 class="display mt-5 text-2xl font-black">Quickfire Matching</h3><p class="mt-3 leading-7 text-ink/70">A short set of choices: what students want to do, social energy, budget, time and transport.</p><p class="mt-4 text-sm font-bold text-purple">No accounts. No long forms.</p></article>
+          <article class="lift rounded-[1.75rem] border-2 border-purple/10 bg-white p-6 shadow-card"><span class="grid h-11 w-11 place-items-center rounded-2xl bg-butter text-lg font-black text-purple">02</span><h3 class="display mt-5 text-2xl font-black">Curated Recommendations</h3><p class="mt-3 leading-7 text-ink/70">Three relevant Dublin/DCU-focused ideas, from gigs and run clubs to book clubs, food, fitness and free outdoor plans.</p><p class="mt-4 text-sm font-bold text-purple">Cost and availability stay clearly estimated.</p></article>
+          <article class="lift rounded-[1.75rem] border-2 border-purple/10 bg-white p-6 shadow-card"><span class="grid h-11 w-11 place-items-center rounded-2xl bg-mint text-lg font-black text-purple">03</span><h3 class="display mt-5 text-2xl font-black">Make a Plan</h3><p class="mt-3 leading-7 text-ink/70">A selected activity becomes a compact itinerary with meeting point, timing, total-spend estimate, what to bring and booking guidance.</p><p class="mt-4 text-sm font-bold text-purple">Built for the group chat, not a spreadsheet.</p></article>
+          <article class="lift rounded-[1.75rem] border-2 border-purple/10 bg-white p-6 shadow-card"><span class="grid h-11 w-11 place-items-center rounded-2xl bg-[#e9d6ed] text-lg font-black text-purple">04</span><h3 class="display mt-5 text-2xl font-black">FOMO Vault</h3><p class="mt-3 leading-7 text-ink/70">A simple save-for-later space for ideas worth revisiting: free plans, move and train, meet people, this week, and gigs to watch.</p><p class="mt-4 text-sm font-bold text-purple">No idea gets lost in the chat.</p></article>
+          <article class="lift rounded-[1.75rem] border-2 border-purple/10 bg-white p-6 shadow-card md:col-span-2 lg:col-span-1"><span class="grid h-11 w-11 place-items-center rounded-2xl bg-[#fde3da] text-lg font-black text-purple">05</span><h3 class="display mt-5 text-2xl font-black">Ticket Ready</h3><p class="mt-3 leading-7 text-ink/70">For ticketed plans, students see official-source guidance, full-night cost reminders and prompts to follow venues and promoters.</p><p class="mt-4 text-sm font-bold text-purple">Never claims live tickets or presale access.</p></article>
+        </div>
+      </section>
+
+      <section id="journey" class="border-y border-purple/10 bg-[#f6eff8] py-16 sm:py-24">
+        <div class="mx-auto max-w-6xl px-5 sm:px-8">
+          <div class="max-w-2xl"><p class="text-sm font-bold uppercase tracking-[.16em] text-purple">The product journey</p><h2 class="display mt-3 text-4xl font-black tracking-tight sm:text-5xl">From free evening to actual plan.</h2><p class="mt-4 text-lg leading-7 text-ink/70">The prototype is deliberately focused: one quick journey that a judge can understand in seconds.</p></div>
+          <ol class="mt-8 grid gap-4 md:grid-cols-3"><li class="rounded-3xl bg-white p-5 shadow-sm"><span class="text-sm font-black text-purple">01 / INPUT</span><h3 class="display mt-3 text-xl font-black">Tell us what works</h3><p class="mt-2 text-sm leading-6 text-ink/65">“Under €10, bring a friend, two hours, public transport.”</p></li><li class="rounded-3xl bg-white p-5 shadow-sm"><span class="text-sm font-black text-purple">02 / MATCH</span><h3 class="display mt-3 text-xl font-black">See three useful ideas</h3><p class="mt-2 text-sm leading-6 text-ink/65">Each explains the fit, including cost, time, social format and what to bring.</p></li><li class="rounded-3xl bg-white p-5 shadow-sm"><span class="text-sm font-black text-purple">03 / SHARE</span><h3 class="display mt-3 text-xl font-black">Make the move</h3><p class="mt-2 text-sm leading-6 text-ink/65">Choose an activity, generate a simple plan, then copy the friendly invitation.</p></li></ol>
+
+          <div class="mt-8 overflow-hidden rounded-[2rem] border-2 border-purple/15 bg-paper p-5 shadow-card sm:p-8">
+            <div class="flex items-center justify-between"><p class="text-sm font-bold uppercase tracking-[.16em] text-purple">Prototype walkthrough</p><span class="rounded-full bg-cloud px-3 py-1 text-xs font-bold text-purple">Curated demo data</span></div>
+            <div class="mt-6 grid gap-5 lg:grid-cols-[.7fr_1.3fr]">
+              <div class="rounded-3xl bg-purple p-5 text-white"><p class="text-xs font-bold uppercase tracking-[.15em] text-orchid">Student inputs</p><p class="display mt-3 text-2xl font-black">€10 · Chill with friends · 2 hours · Walk</p><div class="mt-5 flex flex-wrap gap-2 text-xs font-bold"><span class="rounded-full bg-white/15 px-3 py-2">Budget-aware</span><span class="rounded-full bg-white/15 px-3 py-2">Local-first</span><span class="rounded-full bg-white/15 px-3 py-2">Low friction</span></div></div>
+              <div class="grid gap-3 sm:grid-cols-3"><article class="rounded-3xl border-2 border-purple/10 bg-white p-4"><p class="text-xs font-black text-purple">PICK 1</p><h3 class="display mt-2 text-lg font-black">Gallery + coffee walk</h3><p class="mt-2 text-xs leading-5 text-ink/65">~€5 · 2h · Merrion Square</p></article><article class="rounded-3xl border-2 border-purple/10 bg-white p-4"><p class="text-xs font-black text-purple">PICK 2</p><h3 class="display mt-2 text-lg font-black">Canal-side picnic</h3><p class="mt-2 text-xs leading-5 text-ink/65">€0 · 2h · Grand Canal</p></article><article class="rounded-3xl border-2 border-purple/10 bg-white p-4"><p class="text-xs font-black text-purple">PICK 3</p><h3 class="display mt-2 text-lg font-black">Shared bites crawl</h3><p class="mt-2 text-xs leading-5 text-ink/65">~€10 · 2h · Capel Street</p></article></div>
+            </div>
+            <div class="mt-5 rounded-3xl bg-purple p-5 text-white"><p class="text-xs font-bold uppercase tracking-[.15em] text-orchid">Plan ready to send</p><p class="mt-2 text-sm leading-6 text-white/90">“Fancy a gallery + coffee walk? It’s around €5 each, should take two hours, and we can meet by Merrion Square. I’m in if you are ✦”</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="impact" class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
+        <div class="grid gap-10 lg:grid-cols-[.85fr_1.15fr] lg:items-end"><div><p class="text-sm font-bold uppercase tracking-[.16em] text-purple">Why it matters</p><h2 class="display mt-3 text-4xl font-black tracking-tight sm:text-5xl">Social life, not social pressure.</h2><p class="mt-5 text-lg leading-8 text-ink/70">The project makes socialising feel achievable without spending beyond a student budget. It pushes local experiences, shared costs and lower-impact ways of getting around.</p></div><div class="grid gap-4 sm:grid-cols-3"><article class="rounded-3xl border-2 border-purple/10 bg-white p-5 shadow-card"><p class="text-3xl font-black text-purple">40%</p><h3 class="display mt-3 text-xl font-black">Useful</h3><p class="mt-2 text-sm leading-6 text-ink/65">Solves a familiar, real student problem.</p></article><article class="rounded-3xl border-2 border-purple/10 bg-white p-5 shadow-card"><p class="text-3xl font-black text-purple">30%</p><h3 class="display mt-3 text-xl font-black">Clear</h3><p class="mt-2 text-sm leading-6 text-ink/65">Enter a few needs, find something to do, share the plan.</p></article><article class="rounded-3xl border-2 border-purple/10 bg-white p-5 shadow-card"><p class="text-3xl font-black text-purple">30%</p><h3 class="display mt-3 text-xl font-black">Executable</h3><p class="mt-2 text-sm leading-6 text-ink/65">A focused prototype with curated data and reliable rules.</p></article></div></div>
+        <div class="mt-8 grid gap-4 sm:grid-cols-3"><div class="rounded-3xl bg-[#f1f8f3] p-5"><p class="font-bold text-[#356346]">Spend less</p><p class="mt-2 text-sm leading-6 text-ink/70">Suggestions are built around clear per-person estimates and shared plans.</p></div><div class="rounded-3xl bg-[#fff7ec] p-5"><p class="font-bold text-[#765b0e]">Go local</p><p class="mt-2 text-sm leading-6 text-ink/70">Dublin and DCU-focused ideas make a nearby good evening easier to spot.</p></div><div class="rounded-3xl bg-[#fbf0ff] p-5"><p class="font-bold text-purple">Move smarter</p><p class="mt-2 text-sm leading-6 text-ink/70">Walking, cycling and public transport are part of the activity fit, not an afterthought.</p></div></div>
+      </section>
+
+      <section class="border-y border-purple/10 bg-purple py-16 text-white sm:py-20"><div class="mx-auto grid max-w-6xl gap-8 px-5 sm:px-8 lg:grid-cols-[1fr_.85fr] lg:items-center"><div><p class="text-sm font-bold uppercase tracking-[.16em] text-orchid">Future, not live</p><h2 class="display mt-3 text-4xl font-black tracking-tight">The NoMo FOMO Drop.</h2><p class="mt-4 max-w-xl text-lg leading-8 text-white/85">A future weekly digest could surface affordable indie gigs, €0 weekend plans, cheap fitness and community activities, film and food. It is a roadmap idea only—not a live newsletter or integration.</p></div><div class="rounded-3xl bg-white/10 p-6"><p class="text-sm font-bold text-orchid">Later, not promised today</p><ul class="mt-4 space-y-2 text-sm leading-6 text-white/85"><li>• Spotify and Letterboxd taste matching</li><li>• Real accounts and personalised suggestions</li><li>• Live event data and presale alerts</li><li>• Group planning, calendar links and niche newsletters</li></ul></div></div></section>
+
+      <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20"><div class="rounded-[2rem] border-2 border-purple/10 bg-white p-7 shadow-card sm:flex sm:items-center sm:justify-between sm:p-10"><div><p class="text-sm font-bold uppercase tracking-[.16em] text-purple">Let’s talk</p><h2 class="display mt-2 text-3xl font-black tracking-tight">Have a local idea, a question, or feedback?</h2><p class="mt-3 max-w-xl leading-7 text-ink/70">We would love to hear what makes affordable student plans work in the real world.</p></div><a href="contact.html" class="mt-6 inline-flex rounded-full bg-coral px-6 py-3 font-bold text-white shadow-sticker transition hover:-translate-y-0.5 hover:bg-[#d75a45] sm:mt-0">Contact the project team →</a></div></section>
+    </main>
+
+    <footer class="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-9 text-sm sm:flex-row sm:items-center sm:justify-between sm:px-8"><p class="font-semibold text-ink/65">NoMo FOMO · More memories. Less money.</p><div class="flex gap-5 font-bold text-purple"><a href="#idea" class="hover:text-coral">The idea</a><a href="#features" class="hover:text-coral">Features</a><a href="contact.html" class="hover:text-coral">Contact</a></div></footer>
+  </body>
+</html>
