@@ -1,10 +1,14 @@
 # Implementation outcomes
 
+- [x] **Use the identical five-item header navigation on every page:** Features, Find a plan, Activities, Impact, and Contact; keep the same order, responsive visibility, and contact treatment.
+- [x] **Use the supplied hand-drawn NoMo FOMO logo across all site headers and in project logo metadata.**
 - [x] **Keep the warm, purple, mobile-first NoMo FOMO project showcase.** The overview explains the hackathon idea without presenting unbuilt integrations as real.
 - [x] **Explain the student FOMO and budget problem, the NoMo FOMO solution, and “More memories. Less money.”**
 - [x] **Present Quickfire Matching, Curated Recommendations, Make a Plan, FOMO Vault, and Ticket Ready as clear project features.**
 - [x] **Show the end-to-end journey—preferences → three tailored ideas → itinerary → group-chat invitation—as a static, understandable product walkthrough.**
-- [x] **Add a working Plan Finder at `/find` and `/find.html`.** It captures multiple interests, budget, social style, available time, transport, and optional personal notes; it uses only the supplied activity dataset to return three ranked, personalized matches with reasons.
+- [x] **Expand the Plan Finder into a taste-profile form.** Capture likes and hobbies, social vibe, past events or plans that worked, budget, available time, transport, and optional notes; then return three explained matches from the supplied activity dataset.
+- [x] **Add the four supplied phone-app mockup screens as a labelled visual MVP walkthrough.** Show pick-your-vibe, practical filters, recommendations, and activity detail without representing the mockups as a shipped native app.
+- [x] **Remove the video-demo placeholder from the home page.**
 - [x] **Make the matching transparent and privacy-aware.** It is a client-side rules-based prototype, avoids live-AI claims, and keeps form preferences in the current browser page without storing them.
 - [x] **Keep the Activity Library separate from the home page.** The clean `/activities` and `/activities.html` routes include category filters and compact cards with native expandable planning details.
 - [x] **Keep the activity data transparent:** retain supplied estimate, duration, last-checked date, caveat, and official-source links; state that availability and pricing must be rechecked.

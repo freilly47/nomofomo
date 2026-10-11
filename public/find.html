@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Use NoMo FOMO's preference-based demo to find affordable Dublin activity ideas." />
+    <meta name="description" content="Build a NoMo FOMO taste profile for affordable Dublin activity ideas." />
     <title>Plan Finder · NoMo FOMO</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -21,54 +21,75 @@
       body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
       .display { font-family: "Arial Rounded MT Bold", "Trebuchet MS", ui-sans-serif, system-ui, sans-serif; }
       .paper-dot { background-image: radial-gradient(rgba(98,60,120,.14) 1px, transparent 1px); background-size: 16px 16px; }
-      .choice-button { border: 2px solid rgba(98,60,120,.14); background: #fff; color: #623C78; font-weight: 700; transition: background .16s ease, color .16s ease, border-color .16s ease, transform .16s ease; }
-      .choice-button:hover { border-color: rgba(98,60,120,.45); transform: translateY(-1px); }
-      .choice-button.is-selected { background: #623C78; border-color: #623C78; color: #fff; box-shadow: 0 4px 0 rgba(98,60,120,.16); }
+      .profile-choice { border: 2px solid rgba(98,60,120,.13); background: #fff; color: #2E2231; transition: transform .16s ease, border-color .16s ease, background .16s ease, box-shadow .16s ease; }
+      .profile-choice:hover { border-color: rgba(98,60,120,.45); transform: translateY(-2px); }
+      .profile-choice.is-selected { border-color: #E96E57; background: #fff7f4; box-shadow: 0 5px 0 rgba(233,110,87,.18); }
+      .profile-choice .check { opacity: 0; transform: scale(.7); transition: opacity .16s ease, transform .16s ease; }
+      .profile-choice.is-selected .check { opacity: 1; transform: scale(1); }
+      .option-button { border: 2px solid rgba(98,60,120,.14); background: #fff; color: #623C78; font-weight: 700; transition: background .16s ease, color .16s ease, border-color .16s ease, transform .16s ease; }
+      .option-button:hover { border-color: rgba(98,60,120,.45); transform: translateY(-1px); }
+      .option-button.is-selected { background: #623C78; border-color: #623C78; color: #fff; box-shadow: 0 4px 0 rgba(98,60,120,.16); }
       summary::-webkit-details-marker { display: none; }
       summary { list-style: none; }
-      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .choice-button { transition: none; } }
+      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .profile-choice, .option-button, .profile-choice .check { transition: none; } }
     </style>
   </head>
   <body class="bg-paper text-ink antialiased">
     <div class="paper-dot pointer-events-none fixed inset-0 -z-10 opacity-40" aria-hidden="true"></div>
     <header class="mx-auto flex max-w-6xl items-center justify-between px-5 py-5 sm:px-8">
-      <a href="index.html" class="flex items-center gap-3" aria-label="NoMo FOMO home"><span class="grid h-10 w-10 place-items-center rounded-2xl bg-purple text-xl text-orchid shadow-sticker" aria-hidden="true">✦</span><span><strong class="display block text-lg leading-none tracking-tight">NoMo FOMO</strong><span class="mt-1 block text-[10px] font-bold uppercase tracking-[.16em] text-purple">Dublin student hackathon</span></span></a>
-      <nav class="flex items-center gap-1" aria-label="Main navigation"><a href="index.html#features" class="hidden rounded-full px-3 py-2 text-sm font-bold text-purple hover:bg-cloud sm:inline-flex">Project</a><a href="find.html" aria-current="page" class="hidden rounded-full bg-purple px-3 py-2 text-sm font-bold text-white md:inline-flex">Find a plan</a><a href="activities.html" class="hidden rounded-full px-3 py-2 text-sm font-bold text-purple hover:bg-cloud lg:inline-flex">Activities</a><a href="contact.html" class="rounded-full border-2 border-purple bg-white px-4 py-2 text-sm font-bold text-purple transition hover:bg-purple hover:text-white">Contact</a></nav>
+      <a href="index.html" class="flex items-center gap-3" aria-label="NoMo FOMO home"><img src="/manus-storage/NoMo-Fomooption2_042fe936.jpg" alt="NoMo FOMO logo" class="h-11 w-11 rounded-2xl object-cover shadow-sticker" /><span><strong class="display block text-lg leading-none tracking-tight">NoMo FOMO</strong><span class="mt-1 block text-[10px] font-bold uppercase tracking-[.16em] text-purple">Dublin student hackathon</span></span></a>
+      <nav class="flex items-center gap-1" aria-label="Main navigation"><a href="index.html#features" class="hidden rounded-full px-3 py-2 text-sm font-bold text-purple hover:bg-cloud sm:inline-flex">Features</a><a href="find.html" class="hidden rounded-full px-3 py-2 text-sm font-bold text-purple hover:bg-cloud md:inline-flex">Find a plan</a><a href="activities.html" class="hidden rounded-full px-3 py-2 text-sm font-bold text-purple hover:bg-cloud md:inline-flex">Activities</a><a href="index.html#impact" class="hidden rounded-full px-3 py-2 text-sm font-bold text-purple hover:bg-cloud lg:inline-flex">Impact</a><a href="contact.html" class="rounded-full border-2 border-purple bg-white px-4 py-2 text-sm font-bold text-purple transition hover:bg-purple hover:text-white">Contact</a></nav>
     </header>
 
     <main>
       <section class="mx-auto max-w-6xl px-5 pb-12 pt-10 sm:px-8 sm:pt-16">
         <div class="grid gap-8 lg:grid-cols-[1.04fr_.96fr] lg:items-end">
-          <div><p class="inline-flex items-center gap-2 rounded-full border border-purple/20 bg-white px-3 py-1.5 text-sm font-bold text-purple"><span class="h-2 w-2 rounded-full bg-coral"></span>Working personalization demo</p><h1 class="display mt-6 text-5xl font-black leading-[.96] tracking-tight sm:text-6xl">Find your kind<br />of <span class="text-purple">plan.</span></h1><p class="mt-6 max-w-xl text-lg leading-8 text-ink/70">Tell us what sounds good. The Plan Finder ranks the researched activity library around your interests, budget, time, energy, and travel preference.</p></div>
-          <aside class="rounded-[2rem] bg-purple p-6 text-white shadow-card sm:p-7"><p class="text-sm font-bold uppercase tracking-[.16em] text-orchid">A transparent demo</p><p class="display mt-3 text-2xl font-black leading-tight">Personal taste in. Three useful ideas out.</p><p class="mt-4 text-sm leading-6 text-white/85">This is a simple rules-based matcher using the supplied activity research. No account, no tracking, no saved personal data, and no claim of live AI.</p></aside>
+          <div><p class="inline-flex items-center gap-2 rounded-full border border-purple/20 bg-white px-3 py-1.5 text-sm font-bold text-purple"><span class="h-2 w-2 rounded-full bg-coral"></span>Taste-profile demo · 1 minute</p><h1 class="display mt-6 text-5xl font-black leading-[.96] tracking-tight sm:text-6xl">Plans that fit<br /><span class="text-purple">your kind of day.</span></h1><p class="mt-6 max-w-xl text-lg leading-8 text-ink/70">Tell NoMo FOMO about your likes, hobbies, favourite past plans, and practical limits. We will turn that into three relevant Dublin activity ideas.</p></div>
+          <aside class="rounded-[2rem] bg-purple p-6 text-white shadow-card sm:p-7"><p class="text-sm font-bold uppercase tracking-[.16em] text-orchid">Your privacy, kept simple</p><p class="display mt-3 text-2xl font-black leading-tight">A profile for this page—nothing more.</p><p class="mt-4 text-sm leading-6 text-white/85">This is a client-side MVP demo. Your selections stay in the current browser page, are not sent anywhere, and can be changed whenever you like.</p></aside>
         </div>
       </section>
 
       <section class="border-y border-purple/10 bg-cloud/70 py-12 sm:py-16">
-        <div class="mx-auto grid max-w-6xl gap-7 px-5 sm:px-8 lg:grid-cols-[.95fr_1.05fr]">
+        <div class="mx-auto grid max-w-6xl gap-7 px-5 sm:px-8 lg:grid-cols-[1.08fr_.92fr]">
           <form id="plan-form" class="rounded-[2rem] border-2 border-purple/10 bg-white p-6 shadow-card sm:p-8" novalidate>
-            <div class="flex items-start justify-between gap-4"><div><p class="text-sm font-bold uppercase tracking-[.16em] text-purple">Your preferences</p><h2 class="display mt-2 text-3xl font-black">Build a better evening.</h2></div><span class="grid h-10 w-10 place-items-center rounded-2xl bg-[#f6eff8] text-xl text-purple" aria-hidden="true">✦</span></div>
+            <div class="flex flex-wrap items-start justify-between gap-4"><div><p class="text-sm font-bold uppercase tracking-[.16em] text-purple">Your taste profile</p><h2 class="display mt-2 text-3xl font-black">What feels like you?</h2><p class="mt-2 max-w-xl text-sm leading-6 text-ink/65">Pick as many answers as feel right. More detail gives the demo a better starting point.</p></div><span class="rounded-full bg-[#fff1ed] px-3 py-1.5 text-sm font-black text-coral">Step 1 of 3</span></div>
 
-            <fieldset class="mt-7"><legend class="font-bold">What are you in the mood for? <span class="text-coral">Pick one or more</span></legend><div class="mt-3 flex flex-wrap gap-2"><button type="button" class="choice-button rounded-full px-3 py-2 text-sm" data-group="interest" data-value="Music and nightlife" aria-pressed="false">Music & nightlife</button><button type="button" class="choice-button rounded-full px-3 py-2 text-sm" data-group="interest" data-value="Get moving" aria-pressed="false">Get moving</button><button type="button" class="choice-button rounded-full px-3 py-2 text-sm" data-group="interest" data-value="Meet new people" aria-pressed="false">Meet new people</button><button type="button" class="choice-button rounded-full px-3 py-2 text-sm" data-group="interest" data-value="Try something new" aria-pressed="false">Try something new</button><button type="button" class="choice-button rounded-full px-3 py-2 text-sm" data-group="interest" data-value="Food and coffee" aria-pressed="false">Food & coffee</button><button type="button" class="choice-button rounded-full px-3 py-2 text-sm" data-group="interest" data-value="Free and outdoors" aria-pressed="false">Free & outdoors</button></div></fieldset>
+            <fieldset class="mt-8"><legend class="font-bold">Your likes & hobbies <span class="text-coral">Pick one or more</span></legend><div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              <button type="button" class="profile-choice relative rounded-3xl p-4 text-left" data-group="interests" data-values="Music and nightlife" aria-pressed="false"><span class="text-2xl" aria-hidden="true">♫</span><strong class="mt-4 block">Music & nights</strong><span class="mt-1 block text-xs leading-5 text-ink/60">Gigs, comedy, karaoke and late plans.</span><span class="check absolute right-3 top-3 grid h-6 w-6 place-items-center rounded-full bg-coral text-xs font-black text-white">✓</span></button>
+              <button type="button" class="profile-choice relative rounded-3xl p-4 text-left" data-group="interests" data-values="Food and coffee" aria-pressed="false"><span class="text-2xl" aria-hidden="true">☕</span><strong class="mt-4 block">Food & coffee</strong><span class="mt-1 block text-xs leading-5 text-ink/60">New cafés, shared bites and catch-ups.</span><span class="check absolute right-3 top-3 grid h-6 w-6 place-items-center rounded-full bg-coral text-xs font-black text-white">✓</span></button>
+              <button type="button" class="profile-choice relative rounded-3xl p-4 text-left" data-group="interests" data-values="Try something new" aria-pressed="false"><span class="text-2xl" aria-hidden="true">✎</span><strong class="mt-4 block">Art & making</strong><span class="mt-1 block text-xs leading-5 text-ink/60">Galleries, books, workshops and new skills.</span><span class="check absolute right-3 top-3 grid h-6 w-6 place-items-center rounded-full bg-coral text-xs font-black text-white">✓</span></button>
+              <button type="button" class="profile-choice relative rounded-3xl p-4 text-left" data-group="interests" data-values="Get moving|Free and outdoors" aria-pressed="false"><span class="text-2xl" aria-hidden="true">↗</span><strong class="mt-4 block">Outdoors & movement</strong><span class="mt-1 block text-xs leading-5 text-ink/60">Walks, runs, sport and time outside.</span><span class="check absolute right-3 top-3 grid h-6 w-6 place-items-center rounded-full bg-coral text-xs font-black text-white">✓</span></button>
+              <button type="button" class="profile-choice relative rounded-3xl p-4 text-left" data-group="interests" data-values="Meet new people" aria-pressed="false"><span class="text-2xl" aria-hidden="true">◎</span><strong class="mt-4 block">Community & people</strong><span class="mt-1 block text-xs leading-5 text-ink/60">Clubs, societies and friendly group plans.</span><span class="check absolute right-3 top-3 grid h-6 w-6 place-items-center rounded-full bg-coral text-xs font-black text-white">✓</span></button>
+              <button type="button" class="profile-choice relative rounded-3xl p-4 text-left" data-group="interests" data-values="Try something new|Meet new people" aria-pressed="false"><span class="text-2xl" aria-hidden="true">✦</span><strong class="mt-4 block">Surprise me</strong><span class="mt-1 block text-xs leading-5 text-ink/60">Something different, social or curious.</span><span class="check absolute right-3 top-3 grid h-6 w-6 place-items-center rounded-full bg-coral text-xs font-black text-white">✓</span></button>
+            </div></fieldset>
 
-            <fieldset class="mt-7"><legend class="font-bold">What feels comfortable to spend?</legend><div class="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4"><button type="button" class="choice-button rounded-2xl px-3 py-3 text-sm" data-group="budget" data-value="free" aria-pressed="false">€0 only</button><button type="button" class="choice-button is-selected rounded-2xl px-3 py-3 text-sm" data-group="budget" data-value="ten" aria-pressed="true">Up to €10</button><button type="button" class="choice-button rounded-2xl px-3 py-3 text-sm" data-group="budget" data-value="twenty" aria-pressed="false">Up to €20</button><button type="button" class="choice-button rounded-2xl px-3 py-3 text-sm" data-group="budget" data-value="flexible" aria-pressed="false">Flexible</button></div></fieldset>
+            <fieldset class="mt-8"><legend class="font-bold">What has worked for you before? <span class="font-normal text-ink/55">Optional</span></legend><p class="mt-1 text-sm leading-6 text-ink/60">Choose past event styles you would happily repeat.</p><div class="mt-4 grid gap-2 sm:grid-cols-2">
+              <button type="button" class="option-button rounded-2xl px-4 py-3 text-left text-sm" data-group="past" data-values="Food and coffee" aria-pressed="false">Long coffee & catch-ups</button>
+              <button type="button" class="option-button rounded-2xl px-4 py-3 text-left text-sm" data-group="past" data-values="Music and nightlife" aria-pressed="false">Live music, comedy or a night out</button>
+              <button type="button" class="option-button rounded-2xl px-4 py-3 text-left text-sm" data-group="past" data-values="Try something new" aria-pressed="false">Museum, gallery, book or workshop</button>
+              <button type="button" class="option-button rounded-2xl px-4 py-3 text-left text-sm" data-group="past" data-values="Get moving|Free and outdoors" aria-pressed="false">Walk, run, picnic or fresh air</button>
+              <button type="button" class="option-button rounded-2xl px-4 py-3 text-left text-sm" data-group="past" data-values="Meet new people" aria-pressed="false">Society, club or meeting new people</button>
+              <button type="button" class="option-button rounded-2xl px-4 py-3 text-left text-sm" data-group="past" data-values="" aria-pressed="false">I prefer trying a new kind of plan</button>
+            </div></fieldset>
 
-            <div class="mt-7 grid gap-6 sm:grid-cols-2"><fieldset><legend class="font-bold">Your social energy</legend><div class="mt-3 grid gap-2"><button type="button" class="choice-button rounded-2xl px-3 py-2.5 text-left text-sm" data-group="energy" data-value="chill" aria-pressed="false">Chill & low-key</button><button type="button" class="choice-button is-selected rounded-2xl px-3 py-2.5 text-left text-sm" data-group="energy" data-value="social" aria-pressed="true">Social & chatty</button><button type="button" class="choice-button rounded-2xl px-3 py-2.5 text-left text-sm" data-group="energy" data-value="active" aria-pressed="false">Active & outdoors</button></div></fieldset><fieldset><legend class="font-bold">How much time?</legend><div class="mt-3 grid gap-2"><button type="button" class="choice-button rounded-2xl px-3 py-2.5 text-left text-sm" data-group="time" data-value="quick" aria-pressed="false">Under an hour</button><button type="button" class="choice-button is-selected rounded-2xl px-3 py-2.5 text-left text-sm" data-group="time" data-value="two" aria-pressed="true">Around two hours</button><button type="button" class="choice-button rounded-2xl px-3 py-2.5 text-left text-sm" data-group="time" data-value="evening" aria-pressed="false">A full evening</button></div></fieldset></div>
+            <div class="mt-8 flex flex-wrap items-start justify-between gap-4 border-t border-purple/10 pt-7"><div><p class="text-sm font-bold uppercase tracking-[.16em] text-purple">Make it work</p><h3 class="display mt-1 text-2xl font-black">The practical stuff.</h3></div><span class="rounded-full bg-[#f1f8f3] px-3 py-1.5 text-sm font-black text-[#356346]">Step 2 of 3</span></div>
+            <fieldset class="mt-5"><legend class="font-bold">Budget per person</legend><div class="mt-3 grid grid-cols-4 gap-2"><button type="button" class="option-button rounded-2xl px-3 py-3 text-sm" data-group="budget" data-value="free" aria-pressed="false">€0</button><button type="button" class="option-button rounded-2xl px-3 py-3 text-sm" data-group="budget" data-value="five" aria-pressed="false">€5</button><button type="button" class="option-button is-selected rounded-2xl px-3 py-3 text-sm" data-group="budget" data-value="ten" aria-pressed="true">€10</button><button type="button" class="option-button rounded-2xl px-3 py-3 text-sm" data-group="budget" data-value="twenty" aria-pressed="false">€20</button></div></fieldset>
+            <div class="mt-6 grid gap-6 sm:grid-cols-2"><fieldset><legend class="font-bold">Your social vibe</legend><div class="mt-3 grid gap-2"><button type="button" class="option-button rounded-2xl px-3 py-2.5 text-left text-sm" data-group="energy" data-value="chill" aria-pressed="false">Relaxed & low-key</button><button type="button" class="option-button is-selected rounded-2xl px-3 py-2.5 text-left text-sm" data-group="energy" data-value="social" aria-pressed="true">Social with friends</button><button type="button" class="option-button rounded-2xl px-3 py-2.5 text-left text-sm" data-group="energy" data-value="active" aria-pressed="false">Active & outdoors</button></div></fieldset><fieldset><legend class="font-bold">How much time?</legend><div class="mt-3 grid gap-2"><button type="button" class="option-button rounded-2xl px-3 py-2.5 text-left text-sm" data-group="time" data-value="quick" aria-pressed="false">1 hour</button><button type="button" class="option-button is-selected rounded-2xl px-3 py-2.5 text-left text-sm" data-group="time" data-value="two" aria-pressed="true">2 hours</button><button type="button" class="option-button rounded-2xl px-3 py-2.5 text-left text-sm" data-group="time" data-value="halfday" aria-pressed="false">Half a day</button></div></fieldset></div>
+            <fieldset class="mt-6"><legend class="font-bold">How do you want to get there?</legend><div class="mt-3 grid grid-cols-3 gap-2"><button type="button" class="option-button is-selected rounded-2xl px-3 py-3 text-sm" data-group="transport" data-value="walk" aria-pressed="true">Walking</button><button type="button" class="option-button rounded-2xl px-3 py-3 text-sm" data-group="transport" data-value="cycle" aria-pressed="false">Cycling</button><button type="button" class="option-button rounded-2xl px-3 py-3 text-sm" data-group="transport" data-value="public" aria-pressed="false">Public transport</button></div></fieldset>
 
-            <fieldset class="mt-7"><legend class="font-bold">Best way to get there?</legend><div class="mt-3 flex flex-wrap gap-2"><button type="button" class="choice-button rounded-full px-3 py-2 text-sm" data-group="transport" data-value="walk" aria-pressed="false">Walk</button><button type="button" class="choice-button rounded-full px-3 py-2 text-sm" data-group="transport" data-value="cycle" aria-pressed="false">Cycle</button><button type="button" class="choice-button is-selected rounded-full px-3 py-2 text-sm" data-group="transport" data-value="public" aria-pressed="true">Public transport</button></div></fieldset>
-
-            <label class="mt-7 block font-bold" for="notes">Any extra words that describe your ideal plan? <span class="font-normal text-ink/55">Optional</span></label><textarea id="notes" rows="3" maxlength="120" placeholder="e.g. coffee, art, relaxed, music, community…" class="mt-3 w-full resize-y rounded-2xl border-2 border-purple/10 bg-paper px-4 py-3 text-sm outline-none placeholder:text-ink/40 focus:border-purple"></textarea>
-            <p id="form-message" class="mt-3 text-sm font-semibold text-coral" aria-live="polite"></p><button type="submit" class="mt-4 w-full rounded-full bg-coral px-5 py-3.5 font-bold text-white shadow-sticker transition hover:-translate-y-0.5 hover:bg-[#d75a45]">Find my three plans →</button>
+            <div class="mt-8 flex flex-wrap items-start justify-between gap-4 border-t border-purple/10 pt-7"><div><p class="text-sm font-bold uppercase tracking-[.16em] text-purple">One last detail</p><h3 class="display mt-1 text-2xl font-black">Anything else?</h3></div><span class="rounded-full bg-[#fff7ec] px-3 py-1.5 text-sm font-black text-[#765b0e]">Step 3 of 3</span></div>
+            <label class="mt-4 block font-bold" for="notes">Add a few words about what you want <span class="font-normal text-ink/55">Optional</span></label><textarea id="notes" rows="3" maxlength="120" placeholder="e.g. quiet coffee, indie music, free, creative, close to campus…" class="mt-3 w-full resize-y rounded-2xl border-2 border-purple/10 bg-paper px-4 py-3 text-sm outline-none placeholder:text-ink/40 focus:border-purple"></textarea>
+            <p id="form-message" class="mt-3 text-sm font-semibold text-coral" aria-live="polite"></p><button type="submit" class="mt-5 w-full rounded-full bg-coral px-5 py-3.5 font-bold text-white shadow-sticker transition hover:-translate-y-0.5 hover:bg-[#d75a45]">Build my shortlist →</button>
           </form>
 
-          <section id="results" class="rounded-[2rem] border-2 border-purple/10 bg-paper p-6 shadow-card sm:p-8" aria-live="polite"><p class="text-sm font-bold uppercase tracking-[.16em] text-purple">Your matches</p><h2 class="display mt-2 text-3xl font-black">Ready when you are.</h2><p id="result-intro" class="mt-3 max-w-xl leading-7 text-ink/70">Pick at least one interest, then let the demo compare your choices to the 13 researched activity starting points.</p><div id="match-cards" class="mt-6 grid gap-4"></div><a href="activities.html" class="mt-6 inline-flex text-sm font-bold text-purple underline decoration-2 underline-offset-4 hover:text-coral">Browse the full Activity Library →</a></section>
+          <section id="results" class="self-start rounded-[2rem] border-2 border-purple/10 bg-paper p-6 shadow-card sm:p-8" aria-live="polite"><p class="text-sm font-bold uppercase tracking-[.16em] text-purple">Your shortlist</p><h2 class="display mt-2 text-3xl font-black">Built around you.</h2><p id="result-intro" class="mt-3 leading-7 text-ink/70">Choose at least one hobby or past-plan preference, then let the demo compare your profile to the 13 researched activity starting points.</p><div id="profile-summary" class="mt-5 hidden flex-wrap gap-2"></div><div id="match-cards" class="mt-6 grid gap-4"></div><a href="activities.html" class="mt-6 inline-flex text-sm font-bold text-purple underline decoration-2 underline-offset-4 hover:text-coral">Browse the full Activity Library →</a><p class="mt-6 border-t border-purple/10 pt-5 text-xs leading-5 text-ink/55">These are researched starting points, not live bookings. Check each official source for current availability, prices, and entry details.</p></section>
         </div>
       </section>
 
-      <section class="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20"><div class="grid gap-5 md:grid-cols-3"><article class="rounded-3xl bg-[#f6eff8] p-5"><p class="font-bold text-purple">1. You choose</p><p class="mt-2 text-sm leading-6 text-ink/70">Interests, a realistic budget, social energy, time, and travel preferences set the shape of the search.</p></article><article class="rounded-3xl bg-[#fff7ec] p-5"><p class="font-bold text-purple">2. We score</p><p class="mt-2 text-sm leading-6 text-ink/70">The demo adds points for category fit, supplied cost, duration, transport suitability, wording, and your optional notes.</p></article><article class="rounded-3xl bg-[#f1f8f3] p-5"><p class="font-bold text-purple">3. You decide</p><p class="mt-2 text-sm leading-6 text-ink/70">Each result carries the original research caveat. Check the official source before you travel or book.</p></article></div></section>
+      <section class="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20"><div class="grid gap-5 md:grid-cols-3"><article class="rounded-3xl bg-[#f6eff8] p-5"><p class="font-bold text-purple">1. Your tastes</p><p class="mt-2 text-sm leading-6 text-ink/70">Likes, hobbies and past plans help the prototype understand what type of evening feels enjoyable to you.</p></article><article class="rounded-3xl bg-[#fff7ec] p-5"><p class="font-bold text-purple">2. Your constraints</p><p class="mt-2 text-sm leading-6 text-ink/70">Budget, timing and travel make sure a good idea is also realistic for today.</p></article><article class="rounded-3xl bg-[#f1f8f3] p-5"><p class="font-bold text-purple">3. Your shortlist</p><p class="mt-2 text-sm leading-6 text-ink/70">Three transparent matches explain the fit, then point you to the underlying activity research.</p></article></div></section>
     </main>
 
-    <footer class="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-9 text-sm sm:flex-row sm:items-center sm:justify-between sm:px-8"><p class="font-semibold text-ink/65">NoMo FOMO · More memories. Less money.</p><div class="flex gap-5 font-bold text-purple"><a href="index.html#idea" class="hover:text-coral">The idea</a><a href="activities.html" class="hover:text-coral">Activities</a><a href="contact.html" class="hover:text-coral">Contact</a></div></footer>
+    <footer class="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-9 text-sm sm:flex-row sm:items-center sm:justify-between sm:px-8"><p class="font-semibold text-ink/65">NoMo FOMO · More memories. Less money.</p><div class="flex gap-5 font-bold text-purple"><a href="index.html#idea" class="hover:text-coral">The idea</a><a href="find.html" class="hover:text-coral">Plan Finder</a><a href="activities.html" class="hover:text-coral">Activities</a><a href="contact.html" class="hover:text-coral">Contact</a></div></footer>
 
     <script>
       (() => {
@@ -76,47 +97,67 @@
         const message = document.querySelector("#form-message");
         const cards = document.querySelector("#match-cards");
         const intro = document.querySelector("#result-intro");
-        const preferences = { interests: new Set(), budget: "ten", energy: "social", time: "two", transport: "public" };
+        const profileSummary = document.querySelector("#profile-summary");
+        const preferences = { interests: new Set(), past: new Set(), budget: "ten", energy: "social", time: "two", transport: "walk" };
+        const budgetLimits = { free: 0, five: 5, ten: 10, twenty: 20 };
         let activities = [];
         const escapeHtml = (value) => String(value ?? "").replace(/[&<>'"]/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[character]);
         const safeUrl = (value) => { try { const url = new URL(value); return ["http:", "https:"].includes(url.protocol) ? url.href : "#"; } catch { return "#"; } };
         const allText = (activity) => [activity.category, activity.short_description, activity.why_it_fits, activity.social_format, activity.transport_suitability, activity.approximate_duration, ...(activity.best_suited_interests || [])].join(" ").toLowerCase();
+        const tagsFor = (button) => (button.dataset.values || "").split("|").filter(Boolean);
+        const selectedCategories = () => new Set([...preferences.interests, ...preferences.past]);
 
         function choose(button) {
           const { group, value } = button.dataset;
-          if (group === "interest") {
+          if (group === "interests" || group === "past") {
             const selected = !button.classList.contains("is-selected");
             button.classList.toggle("is-selected", selected); button.setAttribute("aria-pressed", String(selected));
-            selected ? preferences.interests.add(value) : preferences.interests.delete(value);
+            tagsFor(button).forEach((tag) => selected ? preferences[group].add(tag) : preferences[group].delete(tag));
             return;
           }
           document.querySelectorAll(`[data-group="${group}"]`).forEach((item) => { item.classList.remove("is-selected"); item.setAttribute("aria-pressed", "false"); });
           button.classList.add("is-selected"); button.setAttribute("aria-pressed", "true"); preferences[group] = value;
         }
 
-        document.querySelectorAll(".choice-button").forEach((button) => button.addEventListener("click", () => choose(button)));
+        document.querySelectorAll(".profile-choice, .option-button").forEach((button) => button.addEventListener("click", () => choose(button)));
+
+        function estimateMaximum(activity) {
+          const values = [...String(activity.estimated_cost_per_person || "").matchAll(/€\s?(\d+)/g)].map((match) => Number(match[1]));
+          return values.length ? Math.max(...values) : null;
+        }
 
         function scoreActivity(activity, notes) {
           const text = allText(activity);
+          const selected = selectedCategories();
           const reasons = [];
           let score = 0;
-          preferences.interests.forEach((interest) => { if (activity.category === interest) { score += 12; reasons.push(`matches your ${interest.toLowerCase()} pick`); } });
-          const isFree = activity.estimated_cost_per_person === "€0";
-          const underTwenty = /under €20/i.test(activity.estimated_cost_per_person);
-          if (preferences.budget === "free" && isFree) { score += 8; reasons.push("fits your €0 budget"); }
-          if (preferences.budget === "ten" && (isFree || underTwenty)) { score += isFree ? 7 : 4; reasons.push(isFree ? "keeps the spend at €0" : "sits in the student-friendly cost range"); }
-          if (preferences.budget === "twenty" && (isFree || underTwenty)) { score += 5; reasons.push("fits within your €20 budget"); }
-          if (preferences.budget === "flexible") score += 2;
+          if (preferences.interests.has(activity.category)) { score += 13; reasons.push("connects to a hobby you chose"); }
+          if (preferences.past.has(activity.category)) { score += 8; reasons.push("matches a plan style you have enjoyed before"); }
+          if (selected.has(activity.category) && !reasons.length) { score += 8; reasons.push("fits the type of evening you picked"); }
+          const estimate = estimateMaximum(activity);
+          if (estimate !== null && estimate <= budgetLimits[preferences.budget]) { score += estimate === 0 ? 7 : 5; reasons.push(estimate === 0 ? "keeps the spend at €0" : `fits your €${budgetLimits[preferences.budget]} budget`); }
           if (preferences.energy === "chill" && /(low|moderate|quiet|relaxed|café|gallery|book)/.test(text)) { score += 5; reasons.push("suits a low-key mood"); }
           if (preferences.energy === "social" && /(social|group|friends|meet people|club|community|shared)/.test(text)) { score += 5; reasons.push("has a social format"); }
           if (preferences.energy === "active" && /(get moving|outdoors|run|walk|hiking|fitness|cycling)/.test(text)) { score += 6; reasons.push("gets you moving or outside"); }
-          if (preferences.time === "quick" && /(30–60|1 hour|short)/.test(text)) { score += 4; reasons.push("works for a short window"); }
-          if (preferences.time === "two" && /(2 hours|1–3 hours|1.5 hours|2–4 hours|flexible)/.test(text)) { score += 4; reasons.push("can work around a two-hour plan"); }
-          if (preferences.time === "evening" && /(evening|night|gig|club|2–4 hours|event-dependent)/.test(text)) { score += 4; reasons.push("can fill an evening"); }
+          if (preferences.time === "quick" && /(30–60|1 hour|short)/.test(text)) { score += 4; reasons.push("works for a one-hour window"); }
+          if (preferences.time === "two" && /(2 hours|1–3 hours|1.5 hours|2–4 hours|flexible)/.test(text)) { score += 4; reasons.push("can work around two hours"); }
+          if (preferences.time === "halfday" && /(half day|3–5|2–4 hours|hike|park|event-dependent)/.test(text)) { score += 4; reasons.push("can fill a longer free window"); }
           const transportTerms = { walk: /walk|walking/, cycle: /cycl|bike/, public: /public transport|bus|dart|luas/ };
-          if (transportTerms[preferences.transport].test(text)) { score += 3; reasons.push(`works with ${preferences.transport === "public" ? "public transport" : preferences.transport} travel`); }
+          if (transportTerms[preferences.transport].test(text)) { score += 3; reasons.push({ walk: "is reachable on foot", cycle: "works for cycling there", public: "works by public transport" }[preferences.transport]); }
           notes.toLowerCase().split(/[^a-zà-ÿ]+/).filter((word) => word.length > 3).forEach((word) => { if (text.includes(word)) { score += 2; reasons.push(`picks up “${word}” from your note`); } });
           return { activity, score, reasons: [...new Set(reasons)].slice(0, 3) };
+        }
+
+        function renderProfileSummary() {
+          const labels = [
+            ...[...document.querySelectorAll('[data-group="interests"].is-selected, [data-group="past"].is-selected')].map((button) => button.querySelector("strong")?.textContent || button.textContent.trim()),
+            `Up to €${budgetLimits[preferences.budget]}`,
+            preferences.energy === "social" ? "Social" : preferences.energy === "chill" ? "Low-key" : "Active",
+            preferences.time === "two" ? "2 hours" : preferences.time === "quick" ? "1 hour" : "Half a day",
+            preferences.transport === "public" ? "Public transport" : preferences.transport === "cycle" ? "Cycling" : "Walking"
+          ];
+          profileSummary.innerHTML = labels.slice(0, 9).map((label) => `<span class="rounded-full bg-[#f6eff8] px-3 py-1.5 text-xs font-bold text-purple">${escapeHtml(label)}</span>`).join("");
+          profileSummary.classList.remove("hidden");
         }
 
         function renderMatches(matches) {
@@ -126,10 +167,10 @@
 
         form.addEventListener("submit", (event) => {
           event.preventDefault(); message.textContent = "";
-          if (!preferences.interests.size) { message.textContent = "Choose at least one interest so we can make the matches useful."; return; }
+          if (!selectedCategories().size) { message.textContent = "Choose at least one hobby, interest, or past-plan preference so we can make the shortlist useful."; return; }
           if (!activities.length) { message.textContent = "The activity library is still loading. Try again in a moment."; return; }
           const matches = activities.map((activity) => scoreActivity(activity, document.querySelector("#notes").value.trim())).sort((a, b) => b.score - a.score || a.activity.name.localeCompare(b.activity.name)).slice(0, 3);
-          intro.textContent = `Three research-backed options shaped around ${[...preferences.interests].join(", ")}.`; renderMatches(matches); document.querySelector("#results").scrollIntoView({ behavior: "smooth", block: "start" });
+          intro.textContent = "Three research-backed options shaped around your taste profile and practical limits."; renderProfileSummary(); renderMatches(matches); document.querySelector("#results").scrollIntoView({ behavior: "smooth", block: "start" });
         });
 
         fetch("data/nomo-fomo-activities.json").then((response) => { if (!response.ok) throw new Error("Dataset unavailable"); return response.json(); }).then((dataset) => { activities = Array.isArray(dataset.activities) ? dataset.activities : []; }).catch(() => { message.textContent = "The activity library could not be loaded in this preview."; });

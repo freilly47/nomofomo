@@ -7,15 +7,25 @@ const port = Number(process.env.PORT || 3000);
 const mimeTypes = {
   ".css": "text/css; charset=utf-8",
   ".html": "text/html; charset=utf-8",
+  ".ico": "image/x-icon",
+  ".jpg": "image/jpeg",
   ".js": "text/javascript; charset=utf-8",
   ".json": "application/json; charset=utf-8",
   ".png": "image/png",
   ".svg": "image/svg+xml",
+  ".webp": "image/webp",
 };
 
 const server = http.createServer((request, response) => {
   const origin = `http://${request.headers.host || "localhost"}`;
   const url = new URL(request.url, origin);
+
+  if (url.pathname === "/_app/health") {
+    response.writeHead(200, { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" });
+    response.end(JSON.stringify({ ok: true }));
+    return;
+  }
+
   const cleanRoutes = { "/": "/index.html", "/find": "/find.html", "/contact": "/contact.html", "/activities": "/activities.html" };
   const safePath = cleanRoutes[url.pathname] || url.pathname;
   const requestedPath = path.resolve(publicDir, `.${safePath}`);
